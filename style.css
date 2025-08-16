@@ -95,6 +95,12 @@ nav ul li a:visited {
   color: #ffffff;
 }
 
+/* Fallback visited link styling for anchors within the navigation even if
+   they aren't wrapped in list items (e.g. if markup gets modified). */
+nav a:visited {
+  color: #ffffff;
+}
+
 nav ul li a:hover,
 nav ul li a:focus {
   color: var(--primary-color);
