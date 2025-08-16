@@ -1,0 +1,326 @@
+/*
+ * Stylesheet for the ARIES Recruiting Automation website.
+ *
+ * This file defines the typographic scale, color palette, layout utilities
+ * and component styling used across all pages. The design is clean and
+ * minimalistic to convey a sense of professionalism and establish the brand
+ * identity. Colors and spacing values are defined up front as CSS variables
+ * so they can be reused consistently throughout the site.
+ */
+
+/* CSS variable definitions for easy theme adjustments */
+:root {
+  --primary-color: #b30000;       /* Deep red used for highlights and buttons */
+  --secondary-color: #0f0f0f;     /* Almost black used for navigation and footer */
+  --background-color: #ffffff;    /* White background for clean look */
+  --text-color: #333333;          /* Dark grey text for readability */
+  --light-grey: #f5f5f5;          /* Soft grey used for card backgrounds */
+  --border-color: #e0e0e0;        /* Light border colour for tables and cards */
+}
+
+/* Reset some common browser defaults */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container utility class to constrain content width */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Header with logo and navigation */
+header {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header img.logo {
+  height: 60px;
+  width: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
+  margin-left: 25px;
+}
+
+nav ul li:first-child {
+  margin-left: 0;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  color: var(--primary-color);
+}
+
+/* Hero section with background image and overlayed text */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url('assets/industrial-robots-tinted.jpg') center/cover no-repeat;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 30px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover,
+.btn:focus {
+  /*
+   * Because vanilla CSS lacks a built‑in colour darkening function, we manually
+   * specify a darker shade for hover/focus states. The value here (#880000)
+   * is a slightly deeper red than our primary colour and provides a clear
+   * visual cue when users interact with buttons.
+   */
+  background-color: #880000;
+}
+
+/* Section styling */
+.section {
+  padding: 60px 0;
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: var(--secondary-color);
+}
+
+.section p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+/* Cards and grid layout for jobs and industries on the home page */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: var(--light-grey);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 25px;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover,
+.card:focus-within {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+/* Job listing table on the job board page */
+.job-list {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+.job-list th,
+.job-list td {
+  padding: 15px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.job-list th {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.job-list tr:hover td {
+  background-color: var(--light-grey);
+}
+
+.apply-btn {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.apply-btn:hover,
+.apply-btn:focus {
+  background-color: #880000;
+}
+
+/* Contact page layout */
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.contact-info p {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form button {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover,
+.contact-form button:focus {
+  background-color: #880000;
+}
+
+/* Footer styling */
+footer {
+  background-color: var(--secondary-color);
+  color: #bbbbbb;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  nav ul li {
+    margin-left: 15px;
+  }
+  .contact-wrapper {
+    flex-direction: column;
+  }
+}
