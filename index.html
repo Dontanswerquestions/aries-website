@@ -14,16 +14,18 @@
   <!-- Header with logo and simple navigation -->
   <header>
     <div class="container nav-wrapper">
-      <a href="index.html" aria-label="ARIES home page">
-        <img src="assets/aries_logo.png" alt="ARIES Recruiting Automation logo" class="logo" />
-      </a>
-      <nav aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="jobs.html">Job Board</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+          <a href="index.html" aria-label="ARIES home page">
+            <!-- Use the root-level logo file instead of referencing the removed assets folder -->
+            <img src="aries_logo.png" alt="ARIES Recruiting Automation logo" class="logo" />
+          </a>
+          <nav aria-label="Main navigation">
+            <!-- Flatten the navigation structure to avoid stray text artifacts.  Using direct anchor tags instead
+                 of a list eliminates the possibility of a lone "ul" showing on the page when markup breaks.
+                 Each link is separated by CSS margins for spacing. -->
+            <a href="index.html">Home</a>
+            <a href="jobs.html">Job Board</a>
+            <a href="contact.html">Contact</a>
+          </nav>
     </div>
   </header>
 
